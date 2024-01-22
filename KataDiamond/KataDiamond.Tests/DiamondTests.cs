@@ -157,7 +157,7 @@ public class DiamondTests
         var diamond = new Diamond(midpoint, separator);
 
         // assert
-        for (int index = 1, middleSpaceCount = 1; index < diamond.Data.Length / 2; index++, middleSpaceCount += 2)
+        for (int index = 1, middleSpaceCount = 1; index <= diamond.Data.Length / 2; index++, middleSpaceCount += 2)
         {
             var side1 = diamond.Data[index];
             var side2 = GetMirroredRow(diamond, index);
@@ -166,8 +166,6 @@ public class DiamondTests
             side1.Should().Contain(expectedMiddleSpace);
             side2.Should().Contain(expectedMiddleSpace);
         }
-
-        diamond.Data[diamond.MidpointPosition].Should().Contain(new string(separator, diamond.MidpointPosition));
     }
 
     private static string GetMirroredRow(Diamond diamond, int index)
