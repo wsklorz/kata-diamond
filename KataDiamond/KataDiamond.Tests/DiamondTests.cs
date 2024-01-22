@@ -24,6 +24,18 @@ public class DiamondTests
         diamond.Separator.Should().Be(separator);
     }
 
+    [Test]
+    public void ForMidpointATheDiamondConsistsOfOnlyA()
+    {
+        // arrange
+        // act
+        var diamond = new Diamond('A', '-');
+
+        // assert
+        diamond.Data.Should().HaveCount(1);
+        diamond.Data[0].Should().Be("A");
+    }
+
     [TestCaseSource(nameof(AllLetters))]
     public void FirstAndLastRowContainSingleA(char midpoint)
     {
