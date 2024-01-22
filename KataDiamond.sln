@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KataDiamond", "KataDiamond\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KataDiamond.Tests", "KataDiamond.Tests\KataDiamond.Tests.csproj", "{303818A5-DA1C-42D6-8D05-792558A5DB6F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{481E5D1E-7FEB-4304-AB7F-E77FB20FF984}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7B4F942F-3404-4578-AF2F-CD23B0BA8132}"
 	ProjectSection(SolutionItems) = preProject
-		..\action.yml = ..\action.yml
+		..\.github\workflows\main.yml = ..\.github\workflows\main.yml
 	EndProjectSection
 EndProject
 Global
