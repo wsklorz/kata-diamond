@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KataDiamond", "KataDiamond\KataDiamond.csproj", "{7F0DA3B4-9F49-4BB3-89B7-70ED264DDFE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KataDiamond", "KataDiamond\KataDiamond.csproj", "{7F0DA3B4-9F49-4BB3-89B7-70ED264DDFE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KataDiamond.Tests", "KataDiamond.Tests\KataDiamond.Tests.csproj", "{303818A5-DA1C-42D6-8D05-792558A5DB6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KataDiamond.Tests", "KataDiamond.Tests\KataDiamond.Tests.csproj", "{303818A5-DA1C-42D6-8D05-792558A5DB6F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{481E5D1E-7FEB-4304-AB7F-E77FB20FF984}"
+	ProjectSection(SolutionItems) = preProject
+		..\action.yml = ..\action.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
