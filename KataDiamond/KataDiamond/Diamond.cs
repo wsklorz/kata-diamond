@@ -6,9 +6,13 @@ public class Diamond
     {
         Midpoint = midpoint;
         Separator = separator;
+        MidpointPosition = Alphabet.PositionOf(Midpoint);
+
         Data = CreateArray();
         PopulateData();
     }
+
+    public int MidpointPosition { get; }
 
     private void PopulateData()
     {
@@ -26,8 +30,7 @@ public class Diamond
 
     public string[] CreateArray()
     {
-        int midpointPosition = Alphabet.PositionOf(Midpoint);
-        int size = (midpointPosition * 2) + 1;
+        int size = (MidpointPosition * 2) + 1;
         return new string[size];
     }
 }
