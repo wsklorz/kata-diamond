@@ -1,2 +1,11 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using KataDiamond;
+
+try
+{
+    var app = new App();
+    app.Run(args);
+}
+catch (Exception e)
+{
+    Console.WriteLine(e.Message);
+}
