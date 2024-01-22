@@ -14,14 +14,6 @@ public class Diamond
 
     public int MidpointPosition { get; }
 
-    private void PopulateData()
-    {
-        for (int i = 0; i < Data.Length; i++)
-        {
-            Data[i] = $"A{new string(Separator, Data.Length - 1)}";
-        }
-    }
-
     public string[] Data { get; }
 
     public char Separator { get; }
@@ -32,5 +24,31 @@ public class Diamond
     {
         int size = (MidpointPosition * 2) + 1;
         return new string[size];
+    }
+
+    private void PopulateData()
+    {
+        string margin = new(Separator, MidpointPosition);
+
+        SetCharactersOnBothSidesRows(0, $"{margin}A{margin}");
+
+        for (int i = 1, middleSpaceCount = 1; i <= MidpointPosition; i++, middleSpaceCount += 2)
+        {
+            char letter = Alphabet.Letters[i];
+            margin = new string(Separator, MidpointPosition - i);
+            var middleSpace = new string(Separator, middleSpaceCount);
+            SetCharactersOnBothSidesRows(i, $"{margin}{letter}{middleSpace}{letter}{margin}");
+        }
+    }
+
+    private void SetCharactersOnBothSidesRows(int index, string characters)
+    {
+        Data[index] = characters;
+        MirrorRow(index);
+    }
+
+    private void MirrorRow(int index)
+    {
+        Data[Data.Length - index - 1] = Data[index];
     }
 }
