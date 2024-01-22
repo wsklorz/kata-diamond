@@ -2,7 +2,9 @@
 
 public static class Alphabet
 {
-    public static readonly char[] Letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+    private static readonly string String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    public static int PositionOf(char letter) => (letter % 32) - 1;
+    public static readonly char[] Letters = String.ToCharArray();
+
+    public static int PositionOf(char letter) => String.IndexOf(letter);
 }

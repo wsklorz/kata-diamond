@@ -6,7 +6,8 @@ public class Diamond
     {
         Midpoint = midpoint;
         Separator = separator;
-        MidpointPosition = Alphabet.PositionOf(Midpoint);
+
+        MidpointPosition = ValidateAndGetAlphabetPosition();
 
         Data = CreateArray();
         PopulateData();
@@ -24,6 +25,17 @@ public class Diamond
     {
         int size = (MidpointPosition * 2) + 1;
         return new string[size];
+    }
+
+    private int ValidateAndGetAlphabetPosition()
+    {
+        var position = Alphabet.PositionOf(Midpoint);
+        if (position < 0)
+        {
+            throw new UnsupportedDiamondMidpointCharacterException(Midpoint);
+        }
+
+        return position;
     }
 
     private void PopulateData()

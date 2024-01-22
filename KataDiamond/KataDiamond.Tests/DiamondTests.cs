@@ -12,6 +12,8 @@ public class DiamondTests
 
     private static readonly object[][] AllLettersWithPosition = Alphabet.Letters.Select((c, i) => new object[] { c, i }).ToArray();
 
+    private static readonly char[] SomeUnsupportedCharacters = "1234567890-_!@#$%^&*()Ł".ToCharArray();
+
     [Test]
     public void DummyTest()
     {
@@ -24,6 +26,19 @@ public class DiamondTests
         // assert
         diamond.Midpoint.Should().Be(midpoint);
         diamond.Separator.Should().Be(separator);
+    }
+
+    [TestCaseSource(nameof(SomeUnsupportedCharacters))]
+    public void CannotCreateDiamondForLetterOutsideOfEnglishAlphabet(char midpoint)
+    {
+        // arrange
+        char separator = ' ';
+
+        // act
+        var action = () => new Diamond(midpoint, separator);
+
+        // assert
+        action.Should().Throw<UnsupportedDiamondMidpointCharacterException>();
     }
 
     [Test]
