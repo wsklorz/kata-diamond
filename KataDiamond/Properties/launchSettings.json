@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "KataDiamond": {
+      "commandName": "Project",
+      "commandLineArgs": "M -\r\n"
+    }
+  }
+}
